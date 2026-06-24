@@ -1,0 +1,54 @@
+{
+  "name": "stats-nba-client",
+  "version": "0.1.0",
+  "description": "Resilient client for stats.nba.com and stats.wnba.com — browser headers, retry + backoff, request pacing, and optional residential-proxy routing to get past the datacenter-IP 403 block.",
+  "keywords": [
+    "nba",
+    "wnba",
+    "stats.nba.com",
+    "basketball",
+    "sports-data",
+    "nba-api",
+    "proxy",
+    "scraper"
+  ],
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "undici": ">=5"
+  },
+  "peerDependenciesMeta": {
+    "undici": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.0",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "undici": "^6.21.0",
+    "vitest": "^2.1.8"
+  }
+}
